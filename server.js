@@ -14,3 +14,4 @@ app.get('/*', function(req, res) {
   res.sendFile('index.html', {root: 'dist/tech-blog/'}
 );
 });
+app.listen(process.env.PORT || 8080);
