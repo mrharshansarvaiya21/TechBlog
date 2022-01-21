@@ -1,0 +1,19 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-2'>Filter by:</div>
+    <div class='col-md-4'>
+      <input type='text' [(ngModel)]="listFilter"/>
+    </div>
+  </div>
+</div>
+
+<div class="container"  *ngIf='blogs.length'>
+  <div class="card" *ngFor='let blog of filteredBlog'>
+    <div class="card-body">
+      <h4 class="card-title">{{blog.heading}}</h4>
+      <div class="card-subtitle mb-2 text-muted">By {{blog.author}} {{blog.timeToRead}} min read</div>
+      <p class="card-text">{{blog.shortIntro}}</p>
+      <a [routerLink]="['/blogs', blog.id]">Read more...</a>
+    </div>
+  </div>
+</div>
